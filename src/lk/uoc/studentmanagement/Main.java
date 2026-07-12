@@ -34,6 +34,10 @@ public class Main {
                     manager.addStudent();
                     break;
 
+                case 2:
+                    manager.displayStudents();
+                    break;
+
 
                 case 6:
                     System.out.println("\nThank you for using Student Management System.");

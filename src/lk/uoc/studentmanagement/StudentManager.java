@@ -90,4 +90,34 @@ public class StudentManager {
     }
 
 
+    // Display Students
+    public void displayStudents() {
+
+        if (students.isEmpty()) {
+
+            System.out.println("\nNo Students Found.");
+            return;
+
+        }
+
+        System.out.println("\n--------------------------------------------------------------");
+        System.out.printf("%-10s %-20s %-10s %-15s%n", "ID", "NAME", "AGE", "COURSE");
+        System.out.println("--------------------------------------------------------------");
+
+        for (Student student : students) {
+
+            System.out.printf("%-10d %-20s %-10d %-15s%n",
+                    student.getStudentId(),
+                    student.getName(),
+                    student.getAge(),
+                    student.getCourse());
+
+        }
+
+        System.out.println("--------------------------------------------------------------");
+
+    }
+
+
+
 }
