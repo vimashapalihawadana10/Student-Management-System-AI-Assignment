@@ -179,4 +179,39 @@ public class StudentManager {
 
     }
 
+    // Delete Student
+    public void deleteStudent() {
+
+        System.out.print("Enter Student ID : ");
+
+        int id = input.nextInt();
+        input.nextLine();
+
+        Student student = findStudent(id);
+
+        if (student == null) {
+
+            System.out.println("Student Not Found.");
+            return;
+
+        }
+
+        System.out.print("Delete Student (Y/N): ");
+
+        String answer = input.nextLine();
+
+        if (answer.equalsIgnoreCase("Y")) {
+
+            students.remove(student);
+
+            System.out.println("Student Deleted Successfully.");
+
+        } else {
+
+            System.out.println("Delete Cancelled.");
+
+        }
+
+    }
+
 }

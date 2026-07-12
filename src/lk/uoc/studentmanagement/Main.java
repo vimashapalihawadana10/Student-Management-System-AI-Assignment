@@ -43,6 +43,9 @@ public class Main {
                 case 4:
                     manager.updateStudent();
                     break;
+                case 5:
+                    manager.deleteStudent();
+                    break;
 
 
                 case 6:
