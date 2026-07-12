@@ -146,5 +146,37 @@ public class StudentManager {
     }
 
 
+    // Update Student
+    public void updateStudent() {
+
+        System.out.print("Enter Student ID : ");
+
+        int id = input.nextInt();
+        input.nextLine();
+
+        Student student = findStudent(id);
+
+        if (student == null) {
+
+            System.out.println("Student Not Found.");
+            return;
+
+        }
+
+        System.out.println("\nCurrent Name : " + student.getName());
+
+        System.out.print("Enter New Name : ");
+        student.setName(input.nextLine());
+
+        System.out.print("Enter New Age : ");
+        student.setAge(input.nextInt());
+        input.nextLine();
+
+        System.out.print("Enter New Course : ");
+        student.setCourse(input.nextLine());
+
+        System.out.println("Student Updated Successfully.");
+
+    }
 
 }

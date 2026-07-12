@@ -40,6 +40,9 @@ public class Main {
                 case 3:
                     manager.searchStudent();
                     break;
+                case 4:
+                    manager.updateStudent();
+                    break;
 
 
                 case 6:
