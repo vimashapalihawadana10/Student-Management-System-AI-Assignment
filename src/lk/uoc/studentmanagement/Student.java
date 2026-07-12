@@ -41,16 +41,4 @@ public class Student {
     public void setCourse(String course) {
         this.course = course;
     }
-
-    public void displayStudent() {
-
-        System.out.println("------------------------------");
-        System.out.println("Student ID : " + studentId);
-        System.out.println("Name       : " + name);
-        System.out.println("Age        : " + age);
-        System.out.println("Course     : " + course);
-        System.out.println("------------------------------");
-
-    }
-
 }

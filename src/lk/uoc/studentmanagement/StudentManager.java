@@ -1,54 +1,93 @@
 package lk.uoc.studentmanagement;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class StudentManager {
 
     private ArrayList<Student> students = new ArrayList<>();
+    private Scanner input = new Scanner(System.in);
 
-    Scanner input = new Scanner(System.in);
-
-
+    // Add Student
     public void addStudent() {
 
-        System.out.print("Enter Student ID : ");
-        int id = input.nextInt();
-        input.nextLine();
+        int id;
+
+        while (true) {
+
+            try {
+
+                System.out.print("Enter Student ID : ");
+                id = input.nextInt();
+                input.nextLine();
+
+                if (findStudent(id) != null) {
+
+                    System.out.println("Student ID already exists!");
+                    return;
+
+                }
+
+                break;
+
+            } catch (InputMismatchException e) {
+
+                System.out.println("Invalid ID. Numbers only.");
+                input.nextLine();
+
+            }
+
+        }
 
         System.out.print("Enter Name : ");
         String name = input.nextLine();
 
-        System.out.print("Enter Age : ");
-        int age = input.nextInt();
-        input.nextLine();
+        int age;
+
+        while (true) {
+
+            try {
+
+                System.out.print("Enter Age : ");
+                age = input.nextInt();
+                input.nextLine();
+
+                break;
+
+            } catch (InputMismatchException e) {
+
+                System.out.println("Invalid age. Please enter numbers only.");
+                input.nextLine();
+
+            }
+
+        }
 
         System.out.print("Enter Course : ");
         String course = input.nextLine();
 
-        Student student = new Student(id, name, age, course);
+        students.add(new Student(id, name, age, course));
 
-        students.add(student);
+        System.out.println("\nStudent Added Successfully.");
 
-        System.out.println("Student Added Successfully!");
     }
+    // Helper Method
+    private Student findStudent(int id) {
 
+        for (Student student : students) {
 
-    public void displayStudents() {
+            if (student.getStudentId() == id) {
 
-        if (students.isEmpty()) {
+                return student;
 
-            System.out.println("No Students Found.");
-            return;
+            }
 
         }
 
-        for(Student student : students){
-
-            student.displayStudent();
-
-        }
+        return null;
 
     }
+
 
 }

@@ -12,40 +12,39 @@ public class Main {
 
         int choice;
 
-        do{
+        do {
 
-            System.out.println("\n========== STUDENT MANAGEMENT ==========");
+            System.out.println("\n================================================");
+            System.out.println("         STUDENT MANAGEMENT SYSTEM");
+            System.out.println("================================================");
             System.out.println("1. Add Student");
             System.out.println("2. Display Students");
             System.out.println("3. Search Student");
             System.out.println("4. Update Student");
             System.out.println("5. Delete Student");
             System.out.println("6. Exit");
-
-            System.out.print("Enter Choice : ");
+            System.out.println("================================================");
+            System.out.print("Enter your choice : ");
 
             choice = input.nextInt();
 
-            switch(choice){
+            switch (choice) {
 
                 case 1:
                     manager.addStudent();
                     break;
 
-                case 2:
-                    manager.displayStudents();
-                    break;
 
                 case 6:
-                    System.out.println("Thank You!");
+                    System.out.println("\nThank you for using Student Management System.");
                     break;
 
                 default:
-                    System.out.println("Invalid Choice");
+                    System.out.println("Invalid Choice.");
 
             }
 
-        }while(choice!=6);
+        } while (choice != 6);
 
     }
 
