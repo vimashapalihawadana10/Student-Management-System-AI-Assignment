@@ -119,5 +119,32 @@ public class StudentManager {
     }
 
 
+    // Search Student
+    public void searchStudent() {
+
+        System.out.print("Enter Student ID : ");
+
+        int id = input.nextInt();
+
+        Student student = findStudent(id);
+
+        if (student == null) {
+
+            System.out.println("Student Not Found.");
+            return;
+
+        }
+
+        System.out.println("\nStudent Found");
+        System.out.println("---------------------------");
+        System.out.println("ID      : " + student.getStudentId());
+        System.out.println("Name    : " + student.getName());
+        System.out.println("Age     : " + student.getAge());
+        System.out.println("Course  : " + student.getCourse());
+        System.out.println("---------------------------");
+
+    }
+
+
 
 }
